@@ -1,0 +1,12 @@
+import pycaret
+print(pycaret.__version__)
+import warnings
+# 不要な警告文非表示
+warnings.filterwarnings("ignore")
+from pycaret.classification import *
+import pandas as pd
+
+eye_data = pd.DataFrame()
+temp = pd.read_csv('data/raw/23/Chapter1.csv', encoding="ms932", sep=",")
+eye_data = pd.concat([eye_data, temp])
+eye_data.head()
